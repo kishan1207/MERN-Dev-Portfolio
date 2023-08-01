@@ -5,7 +5,7 @@ const GreetingLottie = ({ animationPath }) => {
 	const defaultOptions = {
 		loop: true,
 		autoplay: true,
-		path: animationPath,
+		animationData: animationPath,
 	};
 
 	return (

@@ -1,4 +1,5 @@
 import emoji from "react-easy-emoji";
+import WebDev from './public/lottie/webdev.json'
 
 export const greetings = {
   name: "Kishan Khadela",
@@ -27,7 +28,7 @@ export const skillsSection = {
   data: [
     {
       title: "Full Stack Development",
-      lottieAnimationFile: "/public/lottie/webdev.json", // Path of Lottie Animation JSON File
+      lottieAnimationFile: WebDev, // Path of Lottie Animation JSON File
       skills: [
         emoji(
           "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications."

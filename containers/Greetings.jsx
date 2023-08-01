@@ -10,6 +10,7 @@ import { Button, Container, Row, Col } from "reactstrap";
 
 import GreetingLottie from "../components/DisplayLottie";
 import SocialLinks from "../components/SocialLinks";
+import WebDev from '../public/lottie/coding.json'
 
 const Greetings = () => {
   useEffect(() => {
@@ -51,7 +52,7 @@ const Greetings = () => {
                   </div>
                 </Col>
                 <Col lg="6">
-                  <GreetingLottie animationPath="/public/lottie/coding.json" />
+                  <GreetingLottie animationPath={WebDev} />
                 </Col>
               </Row>
             </div>
