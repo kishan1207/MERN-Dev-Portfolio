@@ -27,7 +27,7 @@ export const skillsSection = {
   data: [
     {
       title: "Full Stack Development",
-      lottieAnimationFile: "/lottie/webdev.json", // Path of Lottie Animation JSON File
+      lottieAnimationFile: "/public/lottie/webdev.json", // Path of Lottie Animation JSON File
       skills: [
         emoji(
           "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications."
@@ -205,7 +205,7 @@ export const seoData = {
   title: "Kishan's Portfolio",
   description: "Full Stack Developer showcasing my work and experience.",
   image: "https://avatars.githubusercontent.com/u/73116795?v=4",
-  url: "https://brendanglancy.software/",
+  url: "https://kishan1207.github.io/dev-portfolio/",
   keywords: [
     "Kishan Khadela",
     "Portfolio",
