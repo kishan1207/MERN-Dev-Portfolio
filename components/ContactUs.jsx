@@ -20,7 +20,8 @@ import {
 export const ContactUs = () => {
   const form = useRef();
   const [alert, setAlert] = React.useState(null);
-  const [formData, setFormData] = useState({ name: '', email: '', body: '' })
+  const [formData, setFormData] = useState({ name: '', email: '', body: '' });
+  const [isLoading, setIsLoading] = useState(false)
 
   const successAlert = {
     color: "success",
@@ -34,6 +35,11 @@ export const ContactUs = () => {
     message: " Oops! Something went wrong. Please try again later.",
   };
 
+  const NoDataErrorAlert = {
+    color: "danger",
+    icon: "ni ni-bell-55",
+    message: "Oops! Please fill out all the fields.",
+  };
   const handleOnchange = (e) => {
     let name = e.target.name;
     let value = e.target.value;
@@ -48,25 +54,31 @@ export const ContactUs = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setFormData({ name: '', email: '', body: '' });
-          setAlert(successAlert);
-        },
-        (error) => {
-          console.log(error.text);
-          setAlert(errorAlert);
-        }
-      );
+    if (formData.name.length && formData.email.length && formData.body.length) {
+      setIsLoading(true);
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+          form.current,
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            setFormData({ name: '', email: '', body: '' });
+            setIsLoading(false);
+            setAlert(successAlert);
+          },
+          (error) => {
+            console.log(error.text);
+            setAlert(errorAlert);
+            setIsLoading(false);
+          }
+        );
+    } else {
+      setAlert(NoDataErrorAlert);
+    }
   };
 
   return (
@@ -153,7 +165,7 @@ export const ContactUs = () => {
                         type="submit"
                         onClick={sendEmail}
                       >
-                        Send Message
+                        {isLoading ? "Sending..." : "Send Message"}
                       </Button>
                     </div>
                   </CardBody>
