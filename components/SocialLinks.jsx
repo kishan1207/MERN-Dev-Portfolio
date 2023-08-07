@@ -87,7 +87,7 @@ const SocialLinks = () => {
 					aria-label="whatsApp"
 				>
 					<span className="btn-inner--icon">
-						<i class="fa fa-whatsapp"></i>
+						<i className="fa fa-whatsapp"></i>
 					</span>
 				</Button>
 			)}	
