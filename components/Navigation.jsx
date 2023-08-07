@@ -145,6 +145,22 @@ const Navigation = () => {
 										</NavLink>
 									</NavItem>
 								)}
+								{socialLinks.whatsApp && (
+									<NavItem>
+										<NavLink
+											rel="noopener"
+											aria-label="Whatsapp"
+											className="nav-link-icon"
+											href={socialLinks.whatsApp}
+											target="_blank"
+										>
+											<i className="fa fa-whatsapp" />
+											<span className="nav-link-inner--text d-lg-none ml-2">
+												Whatsapp
+											</span>
+										</NavLink>
+									</NavItem>
+								)}
 								{socialLinks.twitter && (
 									<NavItem>
 										<NavLink

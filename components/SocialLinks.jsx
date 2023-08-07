@@ -77,6 +77,20 @@ const SocialLinks = () => {
 					</span>
 				</Button>
 			)}	
+			{socialLinks.whatsApp && (
+				<Button
+					className="btn-icon-only rounded-circle ml-1"
+					color="success"
+					href={socialLinks.whatsApp}
+					target="_blank"
+					rel="noopener"
+					aria-label="whatsApp"
+				>
+					<span className="btn-inner--icon">
+						<i class="fa fa-whatsapp"></i>
+					</span>
+				</Button>
+			)}	
 			{socialLinks.twitter && (
 				<Button
 					className="btn-icon-only rounded-circle"

@@ -19,6 +19,7 @@ export const socialLinks = {
   url: 'https://www.canva.com/design/DAFqLlD_sp4/JKryPoBs-DUqi6IjjfvysA/view?utm_content=DAFqLlD_sp4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink',
   instagram: "https://www.instagram.com/kishankhadela1207/",
   github: "https://github.com/kishan1207/",
+  whatsApp: "https://api.whatsapp.com/send?phone=919909188268",
   linkedin: "https://www.linkedin.com/in/kishan-khadela-830311134/",
 };
 
